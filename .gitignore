@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*.local
+web-build/
+.expo/
+*.log
+test-results/
+playwright-report/
+.signing/
+apps/android-preview/build/
+releases/
+
+launch-web-build/
+.env.*
+!.env.example
+!.env.launch.example

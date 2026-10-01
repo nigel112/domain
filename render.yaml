@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: rydora-staging-api
+    runtime: node
+    plan: starter
+    buildCommand: npm ci
+    startCommand: npm run start:launch
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_ORIGIN
+        sync: false
+      - key: SESSION_PEPPER
+        generateValue: true
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_VERIFY_SERVICE_SID
+        sync: false
+      - key: TRACKING_STAGING_ENABLED
+        value: 'false'
+      - key: MAPBOX_USAGE_APPROVED
+        value: 'false'
+      - key: MAPBOX_QUOTE_STORAGE_APPROVED
+        value: 'false'
+      - key: MAPBOX_TOKEN
+        value: ''
+      - key: SERVICE_BOUNDS
+        sync: false
+      - key: RETURN_ZONES
+        value: '[]'
